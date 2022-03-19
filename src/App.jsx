@@ -8,6 +8,6 @@ export default function App() {
     const [startRecall, setStartRecall] = React.useState(false);
 
     if (startRecall)
-        return (<PlayScreen />);
+        return (<PlayScreen startRecall={setStartRecall} />);
     return (<StartScreen startRecall={setStartRecall} />);
 }

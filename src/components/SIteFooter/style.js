@@ -26,3 +26,16 @@ export const $SiteFooter = styled.footer`
         display: flex;
     }
 `;
+
+export const $RestartButton = styled.button`
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+`;

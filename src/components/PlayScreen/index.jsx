@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo-pequeno.png";
 import Flashcard from "../Flashcard";
 import SiteFooter from "../SIteFooter";
 
-export default function PlayScreen() {
+export default function PlayScreen({ startRecall }) {
 
     const questions = getQuestions();
     const answerCount = {};
@@ -26,7 +26,7 @@ export default function PlayScreen() {
                     />)}
                 </$Questions>
             </main>
-            <SiteFooter answerCount={answerCount} />
+            <SiteFooter answerCount={answerCount} startRecall={startRecall} />
         </$PlayScreen>
     );
 }

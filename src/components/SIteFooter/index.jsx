@@ -1,7 +1,7 @@
 import React from "react";
-import { $SiteFooter } from "./style";
+import { $SiteFooter, $RestartButton } from "./style";
 
-export default function SiteFooter({ answerCount }) {
+export default function SiteFooter({ answerCount, startRecall }) {
     const [results, setResults] = React.useState([]);
     const [finalResult, setFinalResult] = React.useState({ title: "", message: "" });
 
@@ -23,6 +23,9 @@ export default function SiteFooter({ answerCount }) {
             <p>{finalResult.message}</p>
             <p>{results.length}/8 CONCLUÍDOS</p>
             <div>{results}</div>
+            {
+                finalResult.title ? <$RestartButton onClick={() => startRecall(false)}>REINICIAR RECALL</$RestartButton> : < ></>
+            }
         </$SiteFooter>
     );
 }
