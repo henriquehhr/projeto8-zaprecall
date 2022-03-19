@@ -33,15 +33,3 @@ export const $Questions = styled.ul`
     flex-direction: column;
     gap: 25px;
 `;
-
-export const $SiteFooter = styled.footer`
-    background-color: white;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-`;

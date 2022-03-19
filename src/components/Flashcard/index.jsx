@@ -2,7 +2,7 @@ import React from "react";
 import { $Flashcard, $CardCover, $Face, $RecallButton } from "./style";
 import flipCard from "../../assets/images/setinha.png";
 
-export default function Flashcard({ questionNumber, question, answer }) {
+export default function Flashcard({ questionNumber, question, answer, answerCount }) {
     const [cover, setCover] = React.useState(true);
     const [fliped, setFliped] = React.useState(false);
     const [result, setResult] = React.useState("");
@@ -10,6 +10,7 @@ export default function Flashcard({ questionNumber, question, answer }) {
     function answerCard(result) {
         setCover(true);
         setResult(result);
+        answerCount.increaseCardsCount();
     }
 
     if (cover) {

@@ -2,10 +2,13 @@ import React from "react"
 import { $PlayScreen, $SiteHeader, $SiteTittle, $Questions, $SiteFooter } from "./style";
 import logo from "../../assets/images/logo-pequeno.png";
 import Flashcard from "../Flashcard";
+import SiteFooter from "../SIteFooter";
 
 export default function PlayScreen() {
 
     const questions = getQuestions();
+    const answerCount = {};
+
     return (
         <$PlayScreen>
             <$SiteHeader>
@@ -19,10 +22,11 @@ export default function PlayScreen() {
                         questionNumber={i + 1}
                         question={question.question}
                         answer={question.answer}
+                        answerCount={answerCount}
                     />)}
                 </$Questions>
             </main>
-            <$SiteFooter></$SiteFooter>
+            <SiteFooter answerCount={answerCount} />
         </$PlayScreen>
     );
 }
