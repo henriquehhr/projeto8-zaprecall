@@ -2,15 +2,16 @@ import React from "react";
 import { $SiteFooter } from "./style";
 
 export default function SiteFooter({ answerCount }) {
-    const [cardsAnswered, setCardsAnswered] = React.useState(0);
+    const [results, setResults] = React.useState([]);
 
-    answerCount.increaseCardsCount = () => {
-        setCardsAnswered(cardsAnswered + 1);
+    answerCount.increaseCardsCount = (result) => {
+        setResults([...results, result]);
     }
 
     return (
         <$SiteFooter>
-            <p>{cardsAnswered}/8 CONCLUÍDOS</p>
+            <p>{results.length}/8 CONCLUÍDOS</p>
+            <div>{results}</div>
         </$SiteFooter>
     );
 }

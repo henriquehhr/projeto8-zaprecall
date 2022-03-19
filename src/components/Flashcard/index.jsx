@@ -1,5 +1,5 @@
 import React from "react";
-import { $Flashcard, $CardCover, $Face, $RecallButton } from "./style";
+import { $Flashcard, $CardCover, $Face, $RecallButton, $IconContainer } from "./style";
 import flipCard from "../../assets/images/setinha.png";
 
 export default function Flashcard({ questionNumber, question, answer, answerCount }) {
@@ -10,30 +10,35 @@ export default function Flashcard({ questionNumber, question, answer, answerCoun
     function answerCard(result) {
         setCover(true);
         setResult(result);
-        answerCount.increaseCardsCount();
+        answerCount.increaseCardsCount(getIcon(result));
+    }
+
+    function getIcon(result) {
+        const iconMap = {
+            forgotten: "close-circle",
+            almost: "help-circle",
+            zap: "checkmark-circle"
+        };
+        let icon;
+
+        if (result) {
+            icon = <$IconContainer className={result} key={questionNumber}>
+                <ion-icon name={iconMap[result]}></ion-icon>
+            </$IconContainer>;
+        } else {
+            icon = <$IconContainer>
+                <ion-icon name="play-outline" onClick={() => setCover(false)}></ion-icon>
+            </$IconContainer>;
+        }
+        return icon;
     }
 
     if (cover) {
-        let icon;
-        switch (result) {
-            case "forgotten":
-                icon = <ion-icon name="close-circle"></ion-icon>;
-                break;
-            case "almost":
-                icon = <ion-icon name="help-circle"></ion-icon>;
-                break;
-            case "zap":
-                icon = <ion-icon name="checkmark-circle"></ion-icon>;
-                break;
-            default:
-                icon = <ion-icon name="play-outline" onClick={() => setCover(false)}></ion-icon>;
-        }
-
         return (
             <$Flashcard className="card-cover">
                 <$CardCover className={result}>
                     <p>Pergunta {questionNumber}</p>
-                    {icon}
+                    {getIcon(result)}
                 </$CardCover>
             </$Flashcard>
         );

@@ -4,8 +4,10 @@ export const $SiteFooter = styled.footer`
     background-color: white;
     height: 70px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 7px;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -16,5 +18,9 @@ export const $SiteFooter = styled.footer`
         font-weight: 400;
         font-size: 18px;
         color: #333333;
+    }
+
+    div {
+        display: flex;
     }
 `;

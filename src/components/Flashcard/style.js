@@ -44,12 +44,6 @@ export const $CardCover = styled.div`
         font-size: 16px;
         line-height: 19px;
     }
-
-    ion-icon {
-        --ionicon-stroke-width: 50px;
-        width: 22px;
-        height: 22px;
-    }
 `;
 
 export const $Face = styled.div`
@@ -118,5 +112,23 @@ export const $RecallButton = styled.button`
     }
     &.green {
         background-color: #2FBE34;
+    }
+`;
+
+export const $IconContainer = styled.div`
+    ion-icon {
+        --ionicon-stroke-width: 50px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    &.forgotten ion-icon {
+        color: #FF3030;
+    }
+    &.almost ion-icon {
+        color: #FF922E;
+    }
+    &.zap ion-icon {
+        color: #2FBE34;
     }
 `;
