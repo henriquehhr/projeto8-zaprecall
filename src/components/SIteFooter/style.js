@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const $SiteFooter = styled.footer`
     background-color: white;
-    height: 70px;
+    min-height: 70px;
+    max-height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 7px;
+    padding: 15px 0 15px 0;
     position: fixed;
     bottom: 0;
     right: 0;

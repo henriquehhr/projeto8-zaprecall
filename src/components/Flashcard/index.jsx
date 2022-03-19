@@ -33,35 +33,32 @@ export default function Flashcard({ questionNumber, question, answer, answerCoun
         return icon;
     }
 
-    if (cover) {
-        return (
-            <$Flashcard className="card-cover">
+    return (
+        <$Flashcard className={cover ? "card-cover" : "card-uncover"}>
+            {cover &&
                 <$CardCover className={result}>
                     <p>Pergunta {questionNumber}</p>
                     {getIcon(result)}
                 </$CardCover>
-            </$Flashcard>
-        );
-    }
-
-    return (
-        <$Flashcard className="card-uncover">
-            <$Face className="front" fliped={fliped}>
-                <p>{question}</p>
-                <img src={flipCard} alt="flip card" onClick={() => setFliped(true)} />
-            </$Face>
-            <$Face className="back" fliped={fliped}>
-                <p>{answer}</p>
-                <$RecallButton className="red" onClick={() => answerCard("forgotten")}>
-                    Não lembrei
-                </$RecallButton>
-                <$RecallButton className="yellow" onClick={() => answerCard("almost")}>
-                    Quase não lembrei
-                </$RecallButton>
-                <$RecallButton className="green" onClick={() => answerCard("zap")}>
-                    Zap!
-                </$RecallButton>
-            </$Face>
+            }
+            {!cover && < >
+                <$Face className="front" fliped={fliped}>
+                    <p>{question}</p>
+                    <img src={flipCard} alt="flip card" onClick={() => setFliped(true)} />
+                </$Face>
+                <$Face className="back" fliped={fliped}>
+                    <p>{answer}</p>
+                    <$RecallButton className="red" onClick={() => answerCard("forgotten")}>
+                        Não lembrei
+                    </$RecallButton>
+                    <$RecallButton className="yellow" onClick={() => answerCard("almost")}>
+                        Quase não lembrei
+                    </$RecallButton>
+                    <$RecallButton className="green" onClick={() => answerCard("zap")}>
+                        Zap!
+                    </$RecallButton>
+                </$Face> </>
+            }
         </$Flashcard>
     );
 }
