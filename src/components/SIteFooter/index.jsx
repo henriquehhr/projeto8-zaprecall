@@ -9,12 +9,12 @@ export default function SiteFooter({ answerCount }) {
         results.push(result);
         setResults([...results]);
 
-        //if (results.length == 8) {
-        //if (results.some(icon => icon.props.className == "forgotten"))
-        setFinalResult({ title: "😥 Putz...", message: "Ainda faltam alguns... Mas não desanime!" });
-        //else
-        //setFinalResult({ title: "🥳 Parabéns!", message: "Você não esqueceu de nenhum flashcard!" });
-        //}
+        if (results.length == 8) {
+            if (results.some(icon => icon.props.className == "forgotten"))
+                setFinalResult({ title: "😥 Putz...", message: "Ainda faltam alguns... Mas não desanime!" });
+            else
+                setFinalResult({ title: "🥳 Parabéns!", message: "Você não esqueceu de nenhum flashcard!" });
+        }
     }
 
     return (

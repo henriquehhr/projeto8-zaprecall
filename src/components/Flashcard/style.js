@@ -8,7 +8,7 @@ export const $Flashcard = styled.li`
     }
 
     &.card-uncover {
-        height: 131px;
+        min-height: 131px;
     }
 
     position: relative;
@@ -85,8 +85,7 @@ export const $Face = styled.div`
         align-content: space-between;
 
         p {
-            grid-column-start: 1;
-            grid-column-end: 4;
+            grid-column: 1 / 4;
         }
 
         ${props => props.fliped ? "transform: rotateY(0deg);" : ""}

@@ -9,7 +9,7 @@ export const $SiteFooter = styled.footer`
     justify-content: center;
     align-items: center;
     gap: 7px;
-    padding: 15px 0 15px 0;
+    padding: 7px 0;
     position: fixed;
     bottom: 0;
     right: 0;

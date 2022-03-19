@@ -34,36 +34,36 @@ export default function PlayScreen() {
 function getQuestions() {
     return [
         {
-            question: "1",
-            answer: "A1"
+            question: "O que é JSX?",
+            answer: "Uma extensão de linguagem do JavaScript"
         },
         {
-            question: "2",
-            answer: "A2"
+            question: "O React é __",
+            answer: "uma biblioteca JavaScript para construção de interfaces"
         },
         {
-            question: "3",
-            answer: "A3"
+            question: "Componentes devem iniciar com __",
+            answer: "letra maiúscula"
         },
         {
-            question: "4",
-            answer: "A4"
+            question: "Podemos colocar __ dentro do JSX",
+            answer: "expressões"
         },
         {
-            question: "5",
-            answer: "A5"
+            question: "O ReactDOM nos ajuda __",
+            answer: "interagindo com a DOM para colocar componentes React na mesma"
         },
         {
-            question: "6",
-            answer: "A6"
+            question: "Usamos o npm para __",
+            answer: "gerenciar os pacotes necessários e suas dependências"
         },
         {
-            question: "7",
-            answer: "A7"
+            question: "Usamos props para __",
+            answer: "passar diferentes informações para componentes"
         },
         {
-            question: "8",
-            answer: "A8"
+            question: "Usamos estado (state) para __",
+            answer: "dizer para o React quando renderizar a tela novamente"
         }
     ].sort(() => Math.random() - 0.5);
 }

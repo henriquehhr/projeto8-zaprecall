@@ -13,8 +13,8 @@ export const $StartScreen = styled.section`
 export const $SiteTittle = styled.h1`
     font-family: 'Righteous';
     font-weight: 400;
-    font-size: 25px;
-    line-height: 31px;
+    font-size: 36px;
+    line-height: 45px;
     color: #FFFFFF;
 `;
 
