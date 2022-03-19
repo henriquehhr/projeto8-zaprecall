@@ -10,7 +10,7 @@ export const $StartScreen = styled.section`
     height: 100vh;
 `;
 
-export const $SiteHeader = styled.h1`
+export const $SiteTittle = styled.h1`
     font-family: 'Righteous';
     font-weight: 400;
     font-size: 25px;

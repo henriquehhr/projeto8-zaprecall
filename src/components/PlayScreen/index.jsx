@@ -1,6 +1,65 @@
-
+import React from "react"
+import { $PlayScreen, $SiteHeader, $SiteTittle, $Questions, $SiteFooter } from "./style";
+import logo from "../../assets/images/logo-pequeno.png";
+import Flashcard from "../Flashcard";
 
 export default function PlayScreen() {
 
-    return <h1> oi </h1>
+    const questions = getQuestions();
+    return (
+        <$PlayScreen>
+            <$SiteHeader>
+                <img src={logo} alt="logo" />
+                <$SiteTittle>ZapRecall</$SiteTittle>
+            </$SiteHeader>
+            <main>
+                <$Questions>
+                    {questions.map((question, i) => <Flashcard
+                        key={question.question}
+                        questionNumber={i + 1}
+                        question={question.question}
+                        answer={question.answer}
+                    />)}
+                </$Questions>
+            </main>
+            <$SiteFooter></$SiteFooter>
+        </$PlayScreen>
+    );
+}
+
+function getQuestions() {
+    return [
+        {
+            question: "1",
+            answer: "A1"
+        },
+        {
+            question: "2",
+            answer: "A2"
+        },
+        {
+            question: "3",
+            answer: "A3"
+        },
+        {
+            question: "4",
+            answer: "A4"
+        },
+        {
+            question: "5",
+            answer: "A5"
+        },
+        {
+            question: "6",
+            answer: "A6"
+        },
+        {
+            question: "7",
+            answer: "A7"
+        },
+        {
+            question: "8",
+            answer: "A8"
+        }
+    ].sort(() => Math.random() - 0.5);
 }
