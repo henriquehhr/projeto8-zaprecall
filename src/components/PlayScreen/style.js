@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const $PlayScreen = styled.section`
     background-color: #FB6B6B;
-    height: 100vh;
-    padding: 75px 37px;
+    min-height: 100vh;
+    max-height: fit-content;
+    padding: 75px 37px 95px;
 `;
 
 export const $SiteHeader = styled.header`
@@ -35,7 +36,7 @@ export const $Questions = styled.ul`
 
 export const $SiteFooter = styled.footer`
     background-color: white;
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
