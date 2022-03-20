@@ -20,7 +20,7 @@ export default function StartScreen({ startRecallWithGoal, decks }) {
                 {
                     decks.map(deck => {
                         if (deck.deckName == "Escolha seu deck")
-                            return <option disabled key={deck.deckName} value={deck.deckName}>{deck.deckName}</option>
+                            return <option disabled className="placeholder" key={deck.deckName} value={deck.deckName}>{deck.deckName}</option>
                         return <option key={deck.deckName} value={deck.deckName}>{deck.deckName}</option>
                     })
                 }

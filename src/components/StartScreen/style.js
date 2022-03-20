@@ -49,6 +49,12 @@ export const $DeckSelection = styled.select`
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
+        background-color: #FFFFFF;
+        color: black;
+
+        &.placeholder {
+            color: #ADADAD;
+        }
     }
 `;
 
