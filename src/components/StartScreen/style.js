@@ -36,7 +36,13 @@ export const $DeckSelection = styled.select`
     padding: 10px;
     border: none;
     outline: none;
-    background-color: #FFFFFF;
+    background-color: #FFF0F0;
+    color: #FB6B6B;
+
+    &.placeholder {
+        color: #ADADAD;
+        background-color: #FFFFFF;
+    }
 
     option {
         font-family: 'Roboto';
