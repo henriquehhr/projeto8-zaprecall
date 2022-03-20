@@ -4,10 +4,11 @@ import logo from "../../assets/images/logo-pequeno.png";
 import Flashcard from "../Flashcard";
 import SiteFooter from "../SIteFooter";
 
-export default function PlayScreen({ startRecall }) {
+export default function PlayScreen({ startRecall, recallGoal }) {
 
     const questions = getQuestions();
     const answerCount = {};
+    console.log("Play screen passando o recall goal: " + recallGoal);
 
     return (
         <$PlayScreen>
@@ -26,7 +27,7 @@ export default function PlayScreen({ startRecall }) {
                     />)}
                 </$Questions>
             </main>
-            <SiteFooter answerCount={answerCount} startRecall={startRecall} />
+            <SiteFooter answerCount={answerCount} startRecall={startRecall} recallGoal={recallGoal} />
         </$PlayScreen>
     );
 }

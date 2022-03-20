@@ -1,9 +1,10 @@
 import logo from "../../assets/images/logo.png"
-import { $StartScreen, $Container, $SiteTittle, $StartButton } from "./style";
+import { $StartScreen, $Container, $SiteTittle, $GoalInput, $StartButton } from "./style";
 import React from "react";
 
-export default function StartScreen({ startRecall }) {
+export default function StartScreen({ startRecallWithGoal }) {
 
+    const [inputValue, setInputValue] = React.useState("");
 
     return (
         <$StartScreen>
@@ -11,7 +12,16 @@ export default function StartScreen({ startRecall }) {
                 <img src={logo} alt="logo" />
                 <$SiteTittle>ZapRecall</$SiteTittle>
             </$Container>
-            <$StartButton onClick={() => startRecall(true)}>Iniciar Recall!</$StartButton>
+            <$GoalInput
+                type="number"
+                placeholder="Digite sua meta de zaps..."
+                onInput={e => setInputValue(e.target.value)}
+            />
+            <$StartButton
+                disabled={inputValue === ""}
+                onClick={() => startRecallWithGoal(inputValue)}>
+                Iniciar Recall!
+            </$StartButton>
         </$StartScreen>
     );
 }
