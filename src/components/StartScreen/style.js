@@ -44,6 +44,11 @@ export const $GoalInput = styled.input`
     ::placeholder {
         color: #ADADAD;
     }
+
+    &.input-filled {
+        background-color: #FFF0F0;
+        color: #FB6B6B;
+    }
 `;
 
 export const $StartButton = styled.button`

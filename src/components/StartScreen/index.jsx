@@ -16,6 +16,7 @@ export default function StartScreen({ startRecallWithGoal }) {
                 type="number"
                 placeholder="Digite sua meta de zaps..."
                 onInput={e => setInputValue(e.target.value)}
+                className={inputValue ? "input-filled" : ""}
             />
             <$StartButton
                 disabled={inputValue === ""}
