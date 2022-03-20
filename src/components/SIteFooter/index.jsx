@@ -1,7 +1,7 @@
 import React from "react";
 import { $SiteFooter, $RestartButton } from "./style";
 
-export default function SiteFooter({ answerCount, startRecall, recallGoal }) {
+export default function SiteFooter({ answerCount, startRecall, recallGoal, deckSize }) {
     const [results, setResults] = React.useState([]);
     const [finalResult, setFinalResult] = React.useState({ title: "", message: "" });
 
@@ -9,7 +9,7 @@ export default function SiteFooter({ answerCount, startRecall, recallGoal }) {
         results.push(result);
         setResults([...results]);
 
-        if (results.length == 8) {
+        if (results.length == deckSize) {
             let zapCount = 0;
             for (let result of results) {
                 if (result.props.className == "forgotten") {
@@ -25,10 +25,6 @@ export default function SiteFooter({ answerCount, startRecall, recallGoal }) {
                 setFinalResult({ title: "🥳 Parabéns!", message: "Você não esqueceu de nenhum flashcard!" });
             else
                 setFinalResult({ title: "😥 Putz...", message: "Ainda faltam alguns... Mas não desanime!" });
-            /*if (results.some(icon => icon.props.className == "forgotten"))
-                setFinalResult({ title: "😥 Putz...", message: "Ainda faltam alguns... Mas não desanime!" });
-            else
-                setFinalResult({ title: "🥳 Parabéns!", message: "Você não esqueceu de nenhum flashcard!" });*/
         }
     }
 
@@ -36,7 +32,7 @@ export default function SiteFooter({ answerCount, startRecall, recallGoal }) {
         <$SiteFooter>
             <p>{finalResult.title}</p>
             <p>{finalResult.message}</p>
-            <p>{results.length}/8 CONCLUÍDOS</p>
+            <p>{results.length}/{deckSize} CONCLUÍDOS</p>
             <div>{results}</div>
             {
                 finalResult.title ? <$RestartButton onClick={() => startRecall(false)}>REINICIAR RECALL</$RestartButton> : < ></>

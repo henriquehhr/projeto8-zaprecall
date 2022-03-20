@@ -27,7 +27,7 @@ export default function PlayScreen({ startRecall, recallGoal }) {
                     />)}
                 </$Questions>
             </main>
-            <SiteFooter answerCount={answerCount} startRecall={startRecall} recallGoal={recallGoal} />
+            <SiteFooter answerCount={answerCount} startRecall={startRecall} recallGoal={recallGoal} deckSize={questions.length} />
         </$PlayScreen>
     );
 }
