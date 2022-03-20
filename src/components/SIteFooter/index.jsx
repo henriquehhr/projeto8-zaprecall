@@ -19,8 +19,6 @@ export default function SiteFooter({ answerCount, startRecall, recallGoal, deckS
                     zapCount++;
                 }
             }
-            console.log("Zap count: " + zapCount);
-            console.log("Recall goal: " + recallGoal);
             if (zapCount >= recallGoal)
                 setFinalResult({ title: "🥳 Parabéns!", message: "Você não esqueceu de nenhum flashcard!" });
             else

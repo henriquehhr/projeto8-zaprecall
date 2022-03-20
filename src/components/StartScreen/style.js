@@ -6,7 +6,7 @@ export const $StartScreen = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 20px;
     height: 100vh;
 `;
 
@@ -26,6 +26,23 @@ export const $Container = styled.div`
     img {
         width: 136px;
         height: 161px;
+    }
+`;
+
+export const $DeckSelection = styled.select`
+    width: 246px;
+    height: 43px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+
+    option {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
     }
 `;
 

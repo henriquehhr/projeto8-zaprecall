@@ -4,11 +4,17 @@ import logo from "../../assets/images/logo-pequeno.png";
 import Flashcard from "../Flashcard";
 import SiteFooter from "../SIteFooter";
 
-export default function PlayScreen({ startRecall, recallGoal }) {
+export default function PlayScreen({ questions, startRecall, recallGoal, decks }) {
 
-    const questions = getQuestions();
     const answerCount = {};
-    console.log("Play screen passando o recall goal: " + recallGoal);
+    let question2;
+    for (let deck of decks) {
+        if (deck.deckName == questions) {
+            question2 = deck.deck;
+            break;
+        }
+
+    }
 
     return (
         <$PlayScreen>
@@ -18,7 +24,7 @@ export default function PlayScreen({ startRecall, recallGoal }) {
             </$SiteHeader>
             <main>
                 <$Questions>
-                    {questions.map((question, i) => <Flashcard
+                    {question2.map((question, i) => <Flashcard
                         key={question.question}
                         questionNumber={i + 1}
                         question={question.question}
@@ -27,44 +33,7 @@ export default function PlayScreen({ startRecall, recallGoal }) {
                     />)}
                 </$Questions>
             </main>
-            <SiteFooter answerCount={answerCount} startRecall={startRecall} recallGoal={recallGoal} deckSize={questions.length} />
+            <SiteFooter answerCount={answerCount} startRecall={startRecall} recallGoal={recallGoal} deckSize={question2.length} />
         </$PlayScreen>
     );
-}
-
-function getQuestions() {
-    return [
-        {
-            question: "O que é JSX?",
-            answer: "Uma extensão de linguagem do JavaScript"
-        },
-        {
-            question: "O React é __",
-            answer: "uma biblioteca JavaScript para construção de interfaces"
-        },
-        {
-            question: "Componentes devem iniciar com __",
-            answer: "letra maiúscula"
-        },
-        {
-            question: "Podemos colocar __ dentro do JSX",
-            answer: "expressões"
-        },
-        {
-            question: "O ReactDOM nos ajuda __",
-            answer: "interagindo com a DOM para colocar componentes React na mesma"
-        },
-        {
-            question: "Usamos o npm para __",
-            answer: "gerenciar os pacotes necessários e suas dependências"
-        },
-        {
-            question: "Usamos props para __",
-            answer: "passar diferentes informações para componentes"
-        },
-        {
-            question: "Usamos estado (state) para __",
-            answer: "dizer para o React quando renderizar a tela novamente"
-        }
-    ].sort(() => Math.random() - 0.5);
 }
