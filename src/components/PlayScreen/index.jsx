@@ -1,6 +1,6 @@
 import React from "react"
 import { $PlayScreen, $SiteHeader, $SiteTittle, $Questions, $SiteFooter } from "./style";
-import logo from "../../assets/images/logo-pequeno.png";
+import logo from "../../assets/images/logo-medio.png";
 import Flashcard from "../Flashcard";
 import SiteFooter from "../SIteFooter";
 

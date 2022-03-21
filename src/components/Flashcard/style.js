@@ -4,7 +4,7 @@ export const $Flashcard = styled.li`
     width: 100%;
     
     &.card-cover {
-        height: 65px;
+        height: clamp(65px, (0.102 * 100vw) + 27px, 92px);
     }
 
     &.card-uncover {
@@ -41,8 +41,8 @@ export const $CardCover = styled.div`
 
     p {
         font-weight: 700;
-        font-size: 16px;
-        line-height: 19px;
+        font-size: clamp(16px, (0.03 * 100vw) + 4.7px, 24px);
+        //line-height: 19px;
     }
 `;
 
@@ -117,8 +117,8 @@ export const $RecallButton = styled.button`
 export const $IconContainer = styled.div`
     ion-icon {
         --ionicon-stroke-width: 50px;
-        width: 22px;
-        height: 22px;
+        width: clamp(23px, (0.049 * 100vw) + 4.7px, 36px);
+        height: clamp(23px, (0.049 * 100vw) + 4.7px, 36px);
     }
     
     &.forgotten ion-icon {

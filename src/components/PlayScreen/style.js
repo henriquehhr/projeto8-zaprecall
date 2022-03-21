@@ -4,17 +4,23 @@ export const $PlayScreen = styled.section`
     background-color: #FB6B6B;
     min-height: 100vh;
     max-height: fit-content;
-    padding: 85px 37px;
+    padding: clamp(153px, (0.337 * 100vh) - 71px, 292px) //clamp(153px, (0.523 * 100vw) - 43px, 292px)
+        37px
+        clamp(90px, (0.18 * 100vw) + 2px , 138px);
 `;
 
 export const $SiteHeader = styled.header`
+    
+    //height: clamp(153px, (0.523 * 100vw) - 43px, 292px);
+    height: clamp(153px, (0.337 * 100vh) - 71px, 292px);
     background: rgb(251,107,107);
     background: linear-gradient(180deg,
         rgba(251,107,107,1) 0%,
-        rgba(251,107,107,1) 85%,
+        rgba(251,107,107,1) 70%,
         rgba(251,107,107,0) 100%);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     position: fixed;
     top: 0;
@@ -22,6 +28,11 @@ export const $SiteHeader = styled.header`
     left: 0;
     z-index: 1;
     padding: 19px;
+
+    img {
+        height: clamp(60px, (0.15 * 100vw) + 3.6px , 100px);
+        width: auto;
+    }
 `;
 
 export const $SiteTittle = styled.h1`

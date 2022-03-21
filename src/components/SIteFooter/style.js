@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const $SiteFooter = styled.footer`
     background-color: white;
-    min-height: 70px;
+    min-height: clamp(70px, (0.18 * 100vw) + 2.3px, 118px);
     max-height: fit-content;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@ export const $SiteFooter = styled.footer`
     p {
         font-family: Recursive;
         font-weight: 400;
-        font-size: 18px;
+        font-size: clamp(18px, (0.053 * 100vw) - 1.7px, 32px);
         color: #333333;
     }
 

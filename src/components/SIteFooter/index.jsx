@@ -12,10 +12,7 @@ export default function SiteFooter({ answerCount, startRecall, recallGoal, deckS
         if (results.length == deckSize) {
             let zapCount = 0;
             for (let result of results) {
-                if (result.props.className == "forgotten") {
-                    setFinalResult({ title: "😥 Putz...", message: "Ainda faltam alguns... Mas não desanime!" });
-                    return;
-                } else if (result.props.className == "zap") {
+                if (result.props.className == "zap") {
                     zapCount++;
                 }
             }
